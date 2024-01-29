@@ -28,18 +28,18 @@ fs.receiveFile(newNote, "./db/db.json","utf-8",(success,newNote)=>{
     res.json(newNotes)
 })
 })
-// router.get('/notes',(req, res)=>{
-// fs.readFile("./db/db.json","utf-8",(err,data)=>{
-//     if (err) {
-//         console.log(err);
+router.delete('/notes/id',(req, res)=>{
+fs.deleteFile("./db/db.json","utf-8",(err,data)=>{
+    if (err) {
+        console.log();
         
-//     }
-//     console.log(data);
-//     let notes = JSON.parse(data)
-//     console.log(notes);
-//     res.json(notes)
-// })
-// })
+    }
+    console.log();
+    let notes = JSON.parse()
+    console.log();
+    res.json()
+})
+})
 
 
 
