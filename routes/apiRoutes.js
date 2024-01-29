@@ -1,46 +1,39 @@
-const router = require('express').Router()
-const fs = require('fs');
-const { title } = require('process');
-router.get('/notes',(req, res)=>{
-fs.readFile("./db/db.json","utf-8",(err,data)=>{
-    if (err) {
-        console.log(err);
-        
+const router = require("express").Router();
+const fs = require("fs");
+const { title } = require("process");
+const database = require("../db/db.json");
+router.get("/notes", (req, res) => {
+  database
+    .getNotes()
+    .then((notes) => {
+      return res.json(notes);
+    })
+    .catch((err) => res.status(500).json(err));
+});
+
+router.post("/notes", (req, res) => {
+  fs.receiveFile(newNote, "./db/db.json", "utf-8", (err, data) => {
+    // const {title,text} = req.body
+    if (title && text) {
+      (newNotes = title), text, console.log(err);
     }
     console.log(data);
-    let notes = JSON.parse(data)
-    console.log(notes);
-    res.json(notes)
-})
-})
-
-
-router.post('/notes',(req, res)=>{
-fs.receiveFile(newNote, "./db/db.json","utf-8",(success,newNote)=>{
-    // const {title,text} = req.body
-    if (title && text) { newNotes=title,text, 
-        console.log(newNote);
-        
-    }
-    console.log(success);
-    let newNotes = JSON.parse(success)
+    let newNotes = JSON.parse(success);
     console.log(newNotes);
-    res.json(newNotes)
-})
-})
-router.delete('/notes/id',(req, res)=>{
-fs.deleteFile("./db/db.json","utf-8",(err,data)=>{
-    if (err) {
-        console.log();
-        
-    }
-    console.log();
-    let notes = JSON.parse()
-    console.log();
-    res.json()
-})
-})
+    res.json(newNotes);
+  });
+});
+// router.delete('/notes/id',(req, res)=>{
+// fs.deleteFile("./db/db.json","utf-8",(err,data)=>{
+//     if (notes) { notes = find, id
+//         console.log();
 
+//     }
+//     console.log();
+//     let notes = JSON.parse()
+//     console.log();
+//     res.json()
+// })
+// })
 
-
-module.exports = router
+module.exports = router;
