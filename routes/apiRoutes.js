@@ -13,13 +13,37 @@ router.get("/notes", (req, res) => {
 });
 
 router.post("./notes", (req, res) => {
-    const newNote = {title,text}
-  const database = require.body
-  .saveNotes();
-  then((notes) => {
-    return res.json('Error');
-  });
+  console.log(req.body)//data
+    const newNote = {
+      title:req.body.title,
+      text:req.body.text}
+ database.saveNotes()
+  .then((notes) => {
+    return res.json(response );
+  })
+  .catch((success) => res.status(500).json(success))
 });
+
+
+// router.delete('/notes/id',(req, res)=>{
+//   database
+//   .deleteNotes()
+//   .then(notes) => {
+//     return res.json
+//   }
+// // fs.deleteFile("./db/db.json","utf-8",(err,data)=>{
+//     if (notes) { notes = find, id
+//         console.log();
+
+//     }
+//     console.log();
+//     let notes = JSON.parse()
+//     console.log();
+//     res.json()
+// })
+// })
+
+module.exports = router;
 
 // router.post("/notes", (req, res) => {
 //   fs.receiveFile(newNote, "./db/db.json", "utf-8", (err, data) => {
@@ -32,18 +56,4 @@ router.post("./notes", (req, res) => {
 //     console.log(newNotes);
 //     res.json(newNotes);
 //   });
-// });
-router.delete('/notes/id',(req, res)=>{
-fs.deleteFile("./db/db.json","utf-8",(err,data)=>{
-    if (notes) { notes = find, id
-        console.log();
-
-    }
-    console.log();
-    let notes = JSON.parse()
-    console.log();
-    res.json()
-})
-})
-
-module.exports = router;
+// })
