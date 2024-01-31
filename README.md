@@ -49,7 +49,7 @@ A short and simple permissive license with conditions only requiring preservatio
   [https://choosealicense.com/licenses/mit/](https://choosealicense.com/licenses/mit/)
 
 ## Project status
-Project is running and taking notes and saving them
+Project is running and taking notes and saving them and then delete them if you want
 
   
   ## Tests
