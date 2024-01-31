@@ -10,6 +10,7 @@
 ## Visuals
 
 ![Alt text](image.png)
+![Alt text](image-1.png)
 
 ## Installation
 npm i helped me install all my files I needed
